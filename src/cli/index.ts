@@ -8,6 +8,8 @@ declare const __REFERENCE__: string;
 process.removeAllListeners('warning');
 process.on('warning', (warning: Error & { code?: string }) => {
   if (warning.code === 'MODULE_TYPELESS_PACKAGE_JSON') return;
+  // Older Node versions warn before the CommonJS fallback in cli/main.ts takes over.
+  if (/^To load an ES module/.test(warning.message)) return;
   process.stderr.write(`${warning.name}: ${warning.message}
 `);
 });

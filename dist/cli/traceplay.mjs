@@ -959,6 +959,7 @@ function openFile(path) {
 process.removeAllListeners("warning");
 process.on("warning", (warning) => {
   if (warning.code === "MODULE_TYPELESS_PACKAGE_JSON") return;
+  if (/^To load an ES module/.test(warning.message)) return;
   process.stderr.write(`${warning.name}: ${warning.message}
 `);
 });
