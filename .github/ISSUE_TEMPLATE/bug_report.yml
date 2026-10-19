@@ -1,0 +1,19 @@
+name: Bug report
+description: Something renders wrongly, a trace fails, or the CLI misbehaves.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: trace
+    attributes:
+      label: The trace (or a playground share link)
+      render: js
+  - type: input
+    id: env
+    attributes:
+      label: Browser / Node.js version

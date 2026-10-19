@@ -1,0 +1,10 @@
+name: Example or feature idea
+description: A new structure, layout, export format, or an example trace you would like to see.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to animate or do?
+    validations:
+      required: true
